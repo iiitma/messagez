@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import ChatList from './components/ChatList';
+import SideBar from './components/SideBar';
+import StartApp from './engine/StartApp';
+
+
+
+
+
 
 function App() {
+  StartApp();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <main className="g-0 max-height-vh-100 row vh-100">
+        <SideBar/>
+        <ChatList/>
+      {/* <Conversation/> */}
+      {/* <ChatOptions/> */}
+        </main>
     </div>
   );
 }
 
 export default App;
+
+
