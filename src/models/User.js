@@ -1,5 +1,4 @@
-import {int, boolean, shuffle } from 'js-randomize';
-import moment from 'moment';
+import {int, boolean, } from 'js-randomize';
 import casual from 'casual-browserify';
 
 

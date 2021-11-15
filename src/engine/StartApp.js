@@ -10,9 +10,8 @@ import person8 from '../assets/images/8.jpg';
 import person9 from '../assets/images/9.jpg';
 import group1 from '../assets/images/g1.jpg';
 import {useEffect} from 'react';
-import {int, boolean, shuffle, array } from 'js-randomize';
+import {int, boolean, shuffle } from 'js-randomize';
 import casual from 'casual-browserify';
-import txtgen from 'txtgen';
 import { useSelector, useDispatch } from 'react-redux';
 import { addMe, addFriend, selectMe, selectFriends, comeOnline, goOffline } from '../features/users'
 import { newChat, getMessage, sendMessage, readChat } from '../features/chats'
@@ -54,6 +53,11 @@ export default function StartApp(){
         if(i%4 === 1){
           groupChat.addToGroup(newFriend)
         }
+
+        if(i%2 === 1){
+          chat.switchNotification(false);
+        }
+
         dispatch(newChat(chat));
         
         let nTexts = int(0,3);
@@ -114,7 +118,7 @@ export default function StartApp(){
       let sender = null
         for(const member of shuffle(groupMembers)){
           let nTexts = 1;
-          console.log(member, nTexts)
+          // console.log(member, nTexts)
           for(let j=0; j < nTexts; j++ ){
             let newMessage = new Message(casual.sentence, member);
             member === newMe.id ?
@@ -130,10 +134,10 @@ export default function StartApp(){
         setInterval(() => {
           let newSender = groupMembers[int(0, groupMembers.length-1)];
           while (newSender === sender) {
-            console.log(newSender)
+            // console.log(newSender)
             newSender = groupMembers[int(0, groupMembers.length-1)];
           }
-          console.log('sender', sender)
+          // console.log('sender', sender)
           dispatch(comeOnline({id: sender}))
           setTimeout(() => {
             dispatch(readChat({id: groupChat.id, myId: sender}))

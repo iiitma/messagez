@@ -1,5 +1,5 @@
 import React,  {useState, useEffect} from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectMe } from '../features/users';
 
 export default function SideBar(params) {

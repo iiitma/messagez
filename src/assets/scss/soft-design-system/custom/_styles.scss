@@ -432,12 +432,18 @@ body.dark-theme {
       .chat-list.open{
           position: absolute;
           z-index: 999999;
-          left: 86px
+          left: 86px;
+          .chat {
+width: calc(100vw - 86px);
+          }
 
       }
 
       .chat-list.close{
         width: 86px;
+
+
+
         .chat-list-header{
             .chat-count{
                 display: none !important
@@ -448,6 +454,7 @@ body.dark-theme {
         }
         .chat-list-body{
             .chat {
+                
                 .chat-avatar .avatar{
                     width: 36px !important;
                     height: 36px !important;

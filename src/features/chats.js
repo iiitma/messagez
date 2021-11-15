@@ -1,7 +1,6 @@
 import {
   createSlice
 } from '@reduxjs/toolkit'
-import notificationSound from '../assets/sounds/notification.mp3';
 
 export const chatsSlice = createSlice({
   name: 'chats',
@@ -100,7 +99,7 @@ export default chatsSlice.reducer
 
 
 function playSound () {
-  // const audio = new Audio("https://audio-previews.elements.envatousercontent.com/files/156322809/preview.mp3?response-content-disposition=attachment%3B+filename%3D%22H42VWCD-notification.mp3%22");
-  const audio = new Audio(notificationSound);
+  const audio = new Audio("https://assets.mixkit.co/sfx/download/mixkit-software-interface-start-2574.wav");
+  // const audio = new Audio(notificationSound);
   audio.play()
 }

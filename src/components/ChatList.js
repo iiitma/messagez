@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import ChatListCard from './ChatListCard'
 import { useSelector } from 'react-redux';
 import { chatCount, selectChatList } from '../features/chats';
-import { selectMe, selectFriends, selectFriendsForSearch } from '../features/users';
+import { selectFriends, selectFriendsForSearch } from '../features/users';
 import Conversation from './Conversation';
 
 
@@ -11,7 +11,6 @@ import Conversation from './Conversation';
 export default function ChatList(params) {
   const count = useSelector(chatCount);
   const chatList = useSelector(selectChatList);
-  const me = useSelector(selectMe)
   const friends = useSelector(selectFriends)
   const friendsForSearch = useSelector(selectFriendsForSearch);
 
@@ -50,6 +49,11 @@ export default function ChatList(params) {
   });
 
 
+  useEffect(() => {
+    count > 0 ?
+    document.title = `Messages (${count})`:
+    document.title = `Messages`;
+  }, [count]);
 
 
   
@@ -66,12 +70,12 @@ export default function ChatList(params) {
 showSideNav ? 
    
 <span>
-<svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler icon-tabler-x" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" className="icon-tabler icon-tabler-x" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <line x1="18" y1="6" x2="6" y2="18" />
   <line x1="6" y1="6" x2="18" y2="18" />
 </svg>
-</span>:    <span ><svg xmlns="http://www.w3.org/2000/svg" class="icon-tabler icon-tabler-menu" viewBox="0 0 24 24">
+</span>:    <span ><svg xmlns="http://www.w3.org/2000/svg" className="icon-tabler icon-tabler-menu" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <line x1="4" y1="8" x2="20" y2="8" />
   <line x1="4" y1="16" x2="20" y2="16" />

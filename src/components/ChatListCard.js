@@ -67,9 +67,9 @@ export default function ChatListCard(params) {
               {  chat.unread(me.id) > 0 ?
                 <span className="badge bg-danger rounded-circle unread-badge ms-4">{chat.unread(me.id)}</span> :
                 chat.read(members[0].id) ?
-                 <span className="text-primary  text-xm"><i className="fal fa-check-double"></i></span> :
+                 <span className="text-primary  text-xs ms-4"><i className="fal fa-check-double"></i></span> :
                  chat.read(members[0].id) !== null ?
-                 <span className="text-gray  text-xm"><i className="fal fa-check-double"></i></span> : ''
+                 <span className="text-gray  text-xs ms-4"><i className="fal fa-check-double"></i></span> : ''
               }
                 </div>
                 </div>

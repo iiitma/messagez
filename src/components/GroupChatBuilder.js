@@ -1,14 +1,12 @@
 import React, {useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectMe } from '../features/users';
 
 export default function GroupChatBuilder(params) {
 
     const chat = params.chat;
     const members = params.members;
-    const timeGroups = [...new Set(chat.messages.map((message)=> message.time))];
     const me = useSelector(selectMe);
-    const newMembers = members.filter((user)=> user.id !== me.id);
 
     useEffect(() => {
     })

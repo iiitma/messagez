@@ -1,4 +1,4 @@
-import {int, boolean, shuffle } from 'js-randomize';
+import {int } from 'js-randomize';
 import Chat from './Chat';
 
 

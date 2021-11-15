@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, { useEffect} from 'react'
 import {useSelector, useDispatch } from 'react-redux';
 import {clearConversation, changeChatNotification } from '../features/chats';
-import ChatList from '../components/ChatList'
 
 export default function ChatOptions(params) {
     const members = params.members;
@@ -78,7 +77,7 @@ export default function ChatOptions(params) {
         </div>
 
         <div className="chat-options-footer px-4">
-            <button className="btn btn-danger btn-link w-100 text-capitalize">
+            <button className="btn btn-danger btn-link w-100 text-capitalize" onClick={()=> dispatch(clearConversation({id: chat.id}))}>
                 Clear Conversation
             </button>
         </div>

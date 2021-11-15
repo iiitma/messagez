@@ -1,6 +1,4 @@
-import {int, boolean, shuffle } from 'js-randomize';
-// import moment from 'moment';
-// import casual from 'casual-browserify';
+import {int,} from 'js-randomize';
 
 export default class Chat {
   

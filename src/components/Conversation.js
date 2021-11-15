@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import casual from 'casual-browserify';
 import ChatBuilder from './ChatBuilder';
 import ChatOptions from './ChatOptions';
 import {useSelector, useDispatch } from 'react-redux';
@@ -47,7 +46,7 @@ export default function Conversation(params) {
 
      
 
-    }, []);
+    }, [chat.id, dispatch, me.id]);
 
     useEffect(() => {
       if(optionsOpen){
