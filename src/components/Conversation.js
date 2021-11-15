@@ -133,7 +133,7 @@ export default function Conversation(params) {
                 <div className="card rounded-0 shadow-none conversation-footer">
                 <div className="card-body px-lg-4 px-2 py-3">
                   <form onSubmit={event => sendChat(event)}>
-                <div className="input-group input-group-lg mb-3">
+                <div className="input-group input-group-lg ">
                 <span className="input-group-text">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon-tabler icon-tabler-paperclip" viewBox="0 0 24 24">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

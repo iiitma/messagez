@@ -424,7 +424,9 @@ body.dark-theme {
 
 @media (max-width: 991.98px) { 
   
-    
+        .chat-list .chat {
+            width: calc( (100vw - 86px)*0.45);
+        }
  }
 
 @media (max-width: 768.98px) { 
@@ -495,6 +497,10 @@ width: calc(100vw - 86px);
     .chat-list.open{
     
         width: calc(100vw - 86px)
+    }
+    .message-bubble, .message-bubble.me {
+        width: 100% !important;
+        max-width: 85% !important;
     }
   }
 
