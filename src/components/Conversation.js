@@ -42,6 +42,7 @@ export default function Conversation(params) {
 
     useEffect(() => {
       // console.log("component updated");
+      document.getElementById('chat-input-input').focus();
       dispatch(readChat({id: chat.id, myId: me.id}))
 
      
@@ -54,7 +55,6 @@ export default function Conversation(params) {
       } else {
         document.getElementById('chat-options').classList.remove('show');
       }
-      document.getElementById('chat-input-input').focus();
     })
 
 

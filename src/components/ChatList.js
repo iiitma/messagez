@@ -65,7 +65,7 @@ export default function ChatList(params) {
         <div id="chat-list" className="col-auto chat-list align-items-left close">
             <header className="chat-list-header px-4 pb-3 pt-4 sticky-top">
                 <div className="row align-items-center mb-3 g-0">
-                <div className="col-auto d-lg-none mx-auto"  onClick={()=> {setShowSideNav((current) => !current)}}>
+                <div className="col-auto d-md-none mx-auto me-auto"  onClick={()=> {setShowSideNav((current) => !current)}}>
                   {
 showSideNav ? 
    
@@ -82,7 +82,7 @@ showSideNav ?
 </svg></span> 
      }
         </div>
-                <h4 className="text-bold lh-1 col mb-0 px-lg-0 ps-sm-3 chat-count">Messages <span className="text-primary">({count})</span></h4>
+                <h4 className="text-bold lh-1 col text-center text-md-start mb-0 px-md-0 ps-sm-3 chat-count">Messages <span className="text-primary">({count})</span></h4>
                 </div>
                 <div className="mb-0">
                 <div className="">

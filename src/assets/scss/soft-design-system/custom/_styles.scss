@@ -1,5 +1,13 @@
 @import './variables';
 
+.App{
+
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
 .form-contol:focus{
     border-color: transparent;
 }
@@ -205,7 +213,7 @@ border-bottom: none;
     width: 300px;
     display: none;
     background-color: #fff;
-    height: 100%;
+    height: 100vh;
     right: -300px !important;
     transition: right cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
 
