@@ -11,13 +11,9 @@ import StartApp from './engine/StartApp';
 function App() {
 
   useEffect(() => {
-    let link = document.querySelector("link[rel~='icon']");
-    if (!link) {
-        link = document.createElement('link');
-        link.rel = 'icon';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    }
-    link.href = 'https://www.colorhexa.com/606af3.png';
+    document.querySelector("link[rel~='icon']").href ='https://www.colorhexa.com/606af3.png';
+    document.querySelector('meta[name="viewport"]').setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
+    document.querySelector('meta[name="theme-color"').setAttribute("content", "#6076f3")
   }, [])
 
   StartApp();
