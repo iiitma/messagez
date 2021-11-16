@@ -19,7 +19,7 @@ import User from '../models/User';
 import Chat from '../models/Chat';
 import GroupChat from '../models/GroupChat';
 import Message from '../models/Message';
-
+import {sentences} from '../models/Sentences';
 
 const images =  shuffle([person1,person2,person3,person4,person5,person6,person7,person8,person9]);
 
@@ -62,7 +62,8 @@ export default function StartApp(){
         
         let nTexts = int(0,3);
         for(let j=0; j <= nTexts; j++ ){
-          let newMessage = new Message(casual.sentence, newFriend.id);
+          let newMessage = new Message(sentences[int(0, sentences.length-1)], newFriend.id);
+          // let newMessage = new Message(casual.sentence, newFriend.id);
           dispatch(getMessage({id: chat.id, message: newMessage, noSound: true }));
         }
   
@@ -70,7 +71,8 @@ export default function StartApp(){
           dispatch(readChat({id: chat.id, myId: newMe.id}))
           let mTexts = int(0,2);
           for(let k=0; k <= mTexts; k++ ){
-            let newMessageFromMe = new Message(casual.sentence, newMe.id);
+            // let newMessageFromMe = new Message(casual.sentence, newMe.id);
+          let newMessageFromMe = new Message(sentences[int(0, sentences.length-1)], newMe.id);
             dispatch(sendMessage({id: chat.id, message: newMessageFromMe }));
           }
 
@@ -86,7 +88,7 @@ export default function StartApp(){
           }, int(10000, 20000));
           let nTexts = int(0,1);
           for(let j=0; j <= nTexts; j++ ){
-            let newMessage = new Message(casual.sentence, newFriend.id);
+            let newMessage = new Message(sentences[int(0, sentences.length-1)], newFriend.id);
             dispatch(getMessage({id: chat.id, message: newMessage }));
           }
           setTimeout(() => {
@@ -105,7 +107,7 @@ export default function StartApp(){
           dispatch(readChat({id: chat.id, myId: newMe.id}))
           let nTexts = int(1,2);
           for(let j=0; j <= nTexts; j++ ){
-            let newMessageFromMe = new Message(casual.sentence, newMe.id);
+          let newMessageFromMe = new Message(sentences[int(0, sentences.length-1)], newMe.id);
           dispatch(sendMessage({id: chat.id, message: newMessageFromMe }));
           }
         }, interval+30000);
@@ -120,7 +122,8 @@ export default function StartApp(){
           let nTexts = 1;
           // console.log(member, nTexts)
           for(let j=0; j < nTexts; j++ ){
-            let newMessage = new Message(casual.sentence, member);
+            let newMessage = new Message(sentences[int(0, sentences.length-1)], member);
+            // let newMessage = new Message(casual.sentence, member);
             member === newMe.id ?
             dispatch(sendMessage({id: groupChat.id, message: newMessage,})) :
             dispatch(getMessage({id: groupChat.id, message: newMessage, noSound: true }));
@@ -144,7 +147,8 @@ export default function StartApp(){
           }, int(10000, 20000));
           let nTexts = int(0,1);
           for(let j=0; j <= nTexts; j++ ){
-            let newMessage = new Message(boolean() ? casual.sentence : casual.sentences(3), sender);
+            // let newMessage = new Message(boolean() ? casual.sentence : casual.sentences(3), sender);
+            let newMessage = new Message(sentences[int(0, sentences.length-1)], sender);
             sender === newMe.id ?
             dispatch(sendMessage({id: groupChat.id, message: newMessage,})) :
             dispatch(getMessage({id: groupChat.id, message: newMessage, noSound: true }));
